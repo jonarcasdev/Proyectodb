@@ -50,6 +50,10 @@
                     <a class="nav-link" href="{{ route('Sucursal.index') }}">{{ __('Sucursal') }}</a>
                     </li>
 
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('estado.index') }}">{{ __('Estados') }}</a>
+                    </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

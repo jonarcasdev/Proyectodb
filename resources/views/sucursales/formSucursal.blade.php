@@ -11,7 +11,7 @@
         <option value="{{ $cliente->id }}" {{ isset($sucursal->cliente_id) && $sucursal->cliente_id == $cliente->id ? 'selected' : '' }}>
             {{ $cliente->nombre }}
         </option>
-    @endforeach
+    @endforeach 
 </select>
 
 <label for="nombre">Nombre</label>

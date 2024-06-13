@@ -9,5 +9,4 @@ class servicio extends Model
 {
     use HasFactory;
 
-
 }

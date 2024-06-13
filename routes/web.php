@@ -6,7 +6,7 @@ use App\Http\Controllers\mensajeroController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ServicioController;
-
+use App\Http\Controllers\estadoController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -21,6 +21,8 @@ Route::get('/clientes', function () {
 route::get('/clientes/create',[ClienteController::class,'create']); */
 
 //Estados
+Route::resource('estado',estadoController::class)->middleware('auth');
+
 //Servicios
 Route::resource('servicio',ServicioController::class)->middleware('auth');
 
@@ -43,6 +45,9 @@ Route::resource('cliente',ClienteController::class)->middleware('auth');
 //Route::group(['middleware'=>'auth'], function(){
 //    Route::get('/', [ClienteController::class, 'index'])->name('home');
 //});
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,6 +14,6 @@ class usuario extends Model
         return $this->belongsTo(Cliente::class);
     } 
 
-    protected $table = 'usuarios';
+    
 
 }

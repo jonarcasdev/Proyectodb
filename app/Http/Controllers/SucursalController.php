@@ -11,7 +11,7 @@ class SucursalController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() 
     {
         //
         $datos['sucursales']=sucursal::paginate(5);
