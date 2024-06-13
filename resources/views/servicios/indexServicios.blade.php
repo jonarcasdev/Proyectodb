@@ -13,44 +13,37 @@
 </div>
 @endif
 <center>
-<h1>Usuarios</h1>
-<a href="{{url('/cliente/create')}}" class="btn btn-success">CREATE</a> <br><br>
+<h1>Servicios</h1>
 </center>
 <table class="table table-dark">
 
     <thead class="thead-dark">
         <tr>
             <th>ID</th>
-            <th>Foto</th>
-            <th>Identificacion</th>
-            <th>Nombre</th>
-            <th>Direccion</th>
+            <th>Origen</th>
+            <th>Destino</th>
             <th>Ciudad</th>
-            <th>Telefono</th>
-            <th>Email</th>
+            <th>Descripccion</th>
+            <th>tipo_transporte</th>
+            <th>numero_paquete</th>
+            <th>estado_paquete</th>
             <th>Acciones</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach( $clientes as $cliente )
+        @foreach( $servicios as $servicio )
         <tr>
-            <td>{{$cliente->id}}</td>
-
+            <td>{{$servicio->id}}</td>
+            <td>{{$servicio->origen}}</td>
+            <td>{{$servicio->destino}}</td>
+            <td>{{$servicio->ciudad}}</td>
+            <td>{{$servicio->descripcion}}</td>
+            <td>{{$servicio->tipo_transporte}}</td>
+            <td>{{$servicio->numero_paquete}}</td>
+            <td>{{$servicio->estado_paquete}}</td>
             <td>
-                <img src="{{ asset('storage').'/'.$cliente->foto}}" alt="" width="100px" >
-
-            </td>
-
-            <td>{{$cliente->identificacion}}</td>
-            <td>{{$cliente->nombre}}</td>
-            <td>{{$cliente->direccion}}</td>
-            <td>{{$cliente->ciudad}}</td>
-            <td>{{$cliente->telefono}}</td>
-            <td>{{$cliente->email}}</td>
-            <td> <a href="{{'/cliente/'.$cliente->id.'/edit'}}" class="btn btn-primary">EDITAR</a> 
-                <br><br>
-                <form action="{{ url('/cliente/'.$cliente->id)}}" method="post" >
+            <form action="{{ url('/servicio/'.$servicio->id)}}" method="post" >
                     @csrf
                     {{method_field('DELETE')}}
                     <input type="submit" onclick="return confirm('¿Quieres borrar?')" value="BORRAR" class="btn btn-danger">

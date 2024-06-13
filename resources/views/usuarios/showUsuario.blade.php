@@ -37,8 +37,8 @@
 <h1>Servicios</h1>
 <center>
 <div class="d-flex justify-content-center">
-<center><a href="{{url('/usuario/')}}" class="btn btn-primary">Solicitar</a><br></center>
-<center><a href="{{url('/usuario/')}}" class="btn btn-primary">Seguimiento</a><br></center>
+<a href="{{url('/servicio/create')}}" class="btn btn-success">crear servicio</a>
+<a href="{{url('/servicio/')}}" class="btn btn-primary">Seguimiento</a>
 </div>
 </div>
 @endsection

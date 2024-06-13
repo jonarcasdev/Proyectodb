@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\mensajeroController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ServicioController;
 
 
 Route::get('/', function () {
@@ -20,7 +21,8 @@ Route::get('/clientes', function () {
 route::get('/clientes/create',[ClienteController::class,'create']); */
 
 //Estados
-
+//Servicios
+Route::resource('servicio',ServicioController::class)->middleware('auth');
 
 //Usuarios
 Route::resource('usuario',UsuarioController::class)->middleware('auth');
@@ -42,6 +44,8 @@ Route::resource('cliente',ClienteController::class)->middleware('auth');
 //    Route::get('/', [ClienteController::class, 'index'])->name('home');
 //});
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

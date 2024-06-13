@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\usuario;
 use App\Models\Cliente;
+use App\Models\servicio;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller 
@@ -27,6 +28,8 @@ class UsuarioController extends Controller
         $usuario = new usuario();
         $cliente = Cliente::all();
         return view('usuarios.createUsuario', compact('cliente'));
+
+
     }
 
     /**
@@ -79,7 +82,7 @@ class UsuarioController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     */
+     */ 
     public function destroy($id)
     {
         //

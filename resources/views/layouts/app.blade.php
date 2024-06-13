@@ -43,15 +43,11 @@
                     </li>
 
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cliente.index') }}">{{ __('Servicio') }}</a>
+                    <a class="nav-link" href="{{ route('servicio.index') }}">{{ __('Servicio') }}</a>
                     </li>
 
                     <li class="nav-item">
                     <a class="nav-link" href="{{ route('Sucursal.index') }}">{{ __('Sucursal') }}</a>
-                    </li>
-
-                    <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Sucursal.index') }}">{{ __('Estado') }}</a>
                     </li>
 
                     </ul>
